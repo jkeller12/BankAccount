@@ -26,7 +26,7 @@ public double getBalance()
 
 public int getAccountID()
 {
-  return password;
+  return accountID;
 }
 //Instance methods
 
@@ -52,7 +52,7 @@ public boolean deposit(double amount)
 
 public boolean withdraw(double amount)
 {
-  if (amount >= 0.0 && <= balance)
+  if (amount >= 0.0 && amount <= balance)
   {
     balance -= amount;
     return true;
@@ -62,14 +62,8 @@ public boolean withdraw(double amount)
 
 public String toString()
 {
-  return Strin.valueOf(accountID) +"\t" + "$" +String.valueOf(balance);
+  return String.valueOf(accountID) +"\t" + "$" +String.valueOf(balance);
 }
 
 
-
-
-public static void main(String[] args)
-{
-
-}
 }
