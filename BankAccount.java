@@ -92,7 +92,15 @@ public boolean transferTo(BankAccount other, double amount, String password)
  @return true if money is successfully transfered, false otherwise.
  */
 
- 
+ if (authenticate(password) && withdraw(amount))
+ {
+   if (other.deposit(amount))
+   {
+     return true;
+   }
+
+ }
+ return false;
 
 
 }
